@@ -1,5 +1,5 @@
 var thisHour = parseInt(moment().format('H'));
-var slotHour = parseInt($("#hideme").text());
+var slotHour = parseInt($(".hideme").text());
 console.log(thisHour);
 console.log(slotHour);
 
@@ -26,4 +26,8 @@ $(".hour").each(function () {
     $(this).removeClass("present");
     $(this).addClass("future");
     
+});
+
+$(".submit-btn").on("click", function(event) {
+    event.preventDefault();
 });
