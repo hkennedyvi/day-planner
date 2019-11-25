@@ -8,9 +8,8 @@ setInterval(update, 1000);
 update();
 
 $(".field").each(function () {
-    //var blockHour = parseInt($(this).attr("id").split("-"));
     var slotHour = parseInt($(this).attr("id"));
-    console.log(parseInt($(this).attr("id")));
+
     if (slotHour < thisHour) {
         $(this).addClass("past");
     }
