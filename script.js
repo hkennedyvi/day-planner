@@ -1,36 +1,4 @@
 var thisHour = parseInt(moment().format('H'));
-//var slotHour = parseInt($(".hideme").text());
-
-var hourIndex = 0;
-
-var slotHour = [{
-    slot: parseInt($("#9").text()),
-},
-{
-    slot: parseInt($("#10").text()),
-},
-{
-    slot: parseInt($("#11").text()),
-},]
-   /* slot: parseInt($("#12").text()),
-
-    slot: parseInt($("#13").text()),
-
-    slot: parseInt($("#14").text()),
-
-    slot: parseInt($("#15").text()),
-
-    slot: parseInt($("#16").text()),
-
-    slot: parseInt($("#17").text()),
-};*/
-
-
-
-console.log(thisHour);
-console.log(slotHour.slot);
-console.log(thisHour - slotHour[hourIndex]);
-console.log(slotHour[hourIndex]);
 
 function update() {
     $('#currentDay').html(moment().format('LLLL'));
@@ -40,20 +8,16 @@ setInterval(update, 1000);
 update();
 
 $(".field").each(function () {
-    //var blockHour = parseInt($(this).attr("id").split("-")[1]);
-
-    //for (i = 0; i < slotHour.length; i++)
-
-        if ('.number' < thisHour) {
-            $(this).addClass("past");
-        }
-        else if ('.number' === thisHour) {
-            $(this).removeClass("past");
-            $(this).addClass("present");
-        }
-        else $(this).removeClass("past");
-    $(this).removeClass("present");
-    $(this).addClass("future");
+    //var blockHour = parseInt($(this).attr("id").split("-"));
+    var slotHour = parseInt($(this).attr("id"));
+    console.log(parseInt($(this).attr("id")));
+    if (slotHour < thisHour) {
+        $(this).addClass("past");
+    }
+    else if (slotHour === thisHour) {
+        $(this).addClass("present");
+    }
+    else $(this).addClass("future");
 
 });
 
